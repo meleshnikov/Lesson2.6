@@ -8,8 +8,8 @@ public class Main {
         String password;
         String confirmPassword;
         Scanner console = new Scanner(System.in);
-        boolean dataConfirmed = false;
-        while (!dataConfirmed) {
+        boolean dataConfirmed;
+        do {
             System.out.print("login: ");
             login = console.nextLine();
             System.out.print("password: ");
@@ -18,6 +18,6 @@ public class Main {
             confirmPassword = console.nextLine();
             dataConfirmed = Data.isValidData(login, password, confirmPassword);
             System.out.println("Data confirmed: " + dataConfirmed);
-        }
+        } while (!dataConfirmed);
     }
 }
